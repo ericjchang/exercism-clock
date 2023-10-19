@@ -9,9 +9,9 @@ export class Clock {
     let totalMinutes = (hour * 60 + minute) % MIN_IN_DAY;
 
     // handle negative input hour & minute (roll over)
-    // if (totalMinutes < 0) {
-    //   totalMinutes += MIN_IN_DAY;
-    // }
+    if (totalMinutes < 0) {
+      totalMinutes += MIN_IN_DAY;
+    }
 
     this.hours = Math.floor(totalMinutes / 60);
     this.minutes = totalMinutes % 60;
